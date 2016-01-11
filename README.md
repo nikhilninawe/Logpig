@@ -7,6 +7,8 @@ S3 recently added [object expiration](http://docs.amazonwebservices.com/AmazonS3
 
 Logpig is implemented based on Logpic (https://github.com/mweagle/Logpig) but simplified for my needs.
 
+The original project was changing the name of file while uploading to S3. This project keeps the name as is so as to easily identify the file in S3 bucket.
+
 
 Logback Appender
 -------
@@ -27,7 +29,8 @@ and add the three required properties as children of the &lt;appender&gt; elemen
 
 * accessKey - your S3 access key
 * secretKey - your S3 secret key
-* bucketName - the bucketName into which the rolled over log files will be posted
+* bucketName - the bucketName in S3
+* folderName - the folderName under the bucketName into which the rolled over log files will be posted. If not provided, the logs will be available inside the bucketName
 
 The appender does not set object expiration policies on the log file bucket.  You should manage expiration policies in the AWS management console.
 
