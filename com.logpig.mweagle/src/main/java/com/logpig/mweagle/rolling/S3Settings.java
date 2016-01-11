@@ -40,6 +40,8 @@ public class S3Settings {
 	public boolean mockPut = false;
 
 	public int retryCount = S3Settings.DEFAULT_RETRY_COUNT;
+	
+	public String folderName;
 
 	public BasicAWSCredentials getAWSCredentials() {
 		return new BasicAWSCredentials(accessKey, secretKey);
@@ -106,7 +108,7 @@ Bucket names cannot contain uppercase characters
 			if (!bucketName.equals(bucketName.toLowerCase()))
 			{
 				errors.add("Bucket names cannot contain uppercase characters");
-			}			
+			}	
 		}
 	}
 }
