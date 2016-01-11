@@ -5,6 +5,9 @@ Logpig is a [Logback](http://logback.qos.ch/) appender that automatically posts 
 
 S3 recently added [object expiration](http://docs.amazonwebservices.com/AmazonS3/latest/dev/ObjectExpiration.html), which makes it a candidate to store log files with scheduled deletion.  
 
+Logpig is implemented based on Logpic (https://github.com/mweagle/Logpig) but simplified for my needs.
+
+
 Logback Appender
 -------
 My goal was to make an Appender that worked like the existing RollingLogfileAppenders, but that would additionally send the rolled log files to S3.  
